@@ -1,9 +1,16 @@
-# example ruby code
+class Train
 
-# class Palindrome
+  attr_accessor(:name, :stop, :id)
 
-#   def is_word?(user_input)
-#     user_input.match?(/[aeiouy]+/i)
-#   end
+    define_method(:initialize) do |attributes|
+      @name = attributes.fetch(:name)
+      @stop = attributes.fetch(:stop)
+      @id = attributes[:id]
+    end
 
-# end
+
+  # def self.find_by(field, value) do
+  #   DB.exec("SELECT * FROM train WHERE #{field} = #{value} Order BY train DESC;").to_a
+  # end
+
+end

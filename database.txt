@@ -1,0 +1,24 @@
+CREATE DATABASE railroad;
+
+CREATE TABLE "train" (
+"id"  SERIAL ,
+"name" VARCHAR ,
+PRIMARY KEY ("id")
+);
+
+CREATE TABLE "city" (
+"id"  SERIAL ,
+"name" VARCHAR ,
+PRIMARY KEY ("id")
+);
+
+CREATE TABLE "stops" (
+"id"  SERIAL ,
+"id_train" INTEGER ,
+"id_city" INTEGER ,
+PRIMARY KEY ("id")
+);
+COMMENT ON TABLE "stops" IS 'city_trains';
+
+ALTER TABLE "stops" ADD FOREIGN KEY ("id_train") REFERENCES "train" ("id");
+ALTER TABLE "stops" ADD FOREIGN KEY ("id_city") REFERENCES "city" ("id");

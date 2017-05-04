@@ -1,6 +1,5 @@
 require "capybara/rspec"
 require "./app"
-require "launchy"
 require "pg"
 
 Capybara.app = Sinatra::Application
