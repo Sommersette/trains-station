@@ -8,7 +8,8 @@ DB = PG.connect({:dbname => "railroad"})
 
 RSpec.configure do |config|
   config.after(:each) do
-    DB.exec("DELETE FROM cities *;")
-    DB.exec("DELETE FROM trains *;")
+    DB.exec("DELETE FROM city *;")
+    DB.exec("DELETE FROM train *;")
+    DB.exec("DELETE FROM stops *;")
   end
 end
